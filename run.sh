@@ -22,7 +22,13 @@ NO_COLOR='\033[0m';
 
 #Store rellevant computer manufacturer's information
 manufacturer=`cat /sys/devices/virtual/dmi/id/sys_vendor`;
-model_name=`cat /sys/devices/virtual/dmi/id/product_version`; 
+
+if [ "$manufacturer" == "Apple Inc." ]; then
+	model_name=`cat /sys/devices/virtual/dmi/id/board_version`; 
+elif [ "$manufacturer" == "LENOVO" ]; then
+	model_name=`cat /sys/devices/virtual/dmi/id/product_version`; 
+fi
+
 script_version=`cat "$model_name"/version.txt`;
 
 #Check the value of $script_version
@@ -61,7 +67,7 @@ if [ -d "$model_name" ]; then
 	while read option; do
 
 		if [ "$option" == "Y" ] | [ "$option" == "y" ]; then
-			#TODO Run
+			//TODO Run
 			exit 0;
 		elif [ "$option" == "N" ] | [ "$option" == "n" ];then
 			echo -e "\nSee you soon!\n";
