@@ -14,8 +14,9 @@ cd Drivers;
 su root -c "bash install_drivers.sh"
 cd ../;
 
-#Configure Wireless Connection
-cd "../CommonScripts";
-su root -c "bash check_connectivity.sh";
-cd "../ThinkPad X1 Carbon";
-
+cd ../CommonScripts;
+su root -c "bash install_gnome3.sh";
+su root -c "bash update_to_stretch.sh";
+su root -c "bash install_development_software.sh";
+su root -c "bash install_paper_theme.sh";
+su root -c "bash install_numix_icons.sh";

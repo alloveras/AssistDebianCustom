@@ -1,0 +1,16 @@
+#Stretch Official
+deb http://mirrors.kernel.org/debian/ stretch main contrib non-free
+deb-src http://mirrors.kernel.org/debian/ stretch main contrib non-free
+
+#Stretch Security-Updates
+deb http://security.debian.org/ stretch/updates main contrib non-free
+deb-src http://security.debian.org/ stretch/updates main contrib non-free
+
+#Stretch System-Updates
+deb http://mirrors.kernel.org/debian/ stretch-updates main contrib non-free
+deb-src http://mirrors.kernel.org/debian/ stretch-updates main contrib non-free
+deb http://mirrors.kernel.org/debian stretch-proposed-updates main contrib non-free
+deb-src http://mirrors.kernel.org/debian stretch-proposed-updates main contrib non-free
+
+#Debian Multimedia
+deb http://www.deb-multimedia.org stretch main non-free

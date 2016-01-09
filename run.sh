@@ -9,6 +9,9 @@
 
 #!/bin/bash
 
+#Export current user launching script
+export current_user=`whoami`;
+
 #Some color variables
 export RED='\033[0;31m';
 export GREEN='\033[0;32m';
