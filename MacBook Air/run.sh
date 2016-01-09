@@ -25,3 +25,4 @@ su root -c "bash update_to_stretch.sh";
 su root -c "bash install_development_software.sh";
 su root -c "bash install_paper_theme.sh";
 su root -c "bash install_numix_icons.sh";
+su root -c "bash install_additional_software.sh";
