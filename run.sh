@@ -7,33 +7,35 @@
 # License: Copyright Assist AI
 ################################################################
 
-#cd /sys/devices/virtual/dmi/id/
-#for f in *; do
-#        printf "$f "
-#        cat $f 2>/dev/null || echo "***_Unavailable_***"
-#done
-
 #!/bin/bash
 
 #Some color variables
-RED='\033[0;31m';
-GREEN='\033[0;32m';
-NO_COLOR='\033[0m';
+export RED='\033[0;31m';
+export GREEN='\033[0;32m';
+export BLUE='\033[0;34m';
+export NO_COLOR='\033[0m';
 
-#Store rellevant computer manufacturer's information
-manufacturer=`cat /sys/devices/virtual/dmi/id/sys_vendor`;
+#Check if the user is only requesting machine information
+if [ "$1" == "--machine-info" ]; then
+	
+	echo -e "${BLUE}[INFO]${NO_COLOR}: Erasing machine_info.txt if exists...";
+	rm -rf machine_info.txt;
 
-if [ "$manufacturer" == "Apple Inc." ]; then
-	model_name=`cat /sys/devices/virtual/dmi/id/board_version`; 
-elif [ "$manufacturer" == "LENOVO" ]; then
-	model_name=`cat /sys/devices/virtual/dmi/id/product_version`; 
-fi
-
-script_version=`cat "$model_name"/version.txt`;
-
-#Check the value of $script_version
-if [ -z $script_version ]; then
-	script_version="N/A";
+	echo -e "${BLUE}[INFO]${NO_COLOR}: Creating machine_info.txt file...";
+	current_path=`pwd`	
+	
+	cd /sys/devices/virtual/dmi/id/;
+	for f in *; do
+        	line=`cat $f 2>/dev/null`;
+		if [ "$?" == "0" ]; then
+			echo "$f : $line" >> "$current_path"/machine_info.txt;
+		else 
+			 echo "$f : ***_Unavailable_***" >> "$current_path"/machine_info.txt;
+		fi
+	done
+	
+	echo -e "${BLUE}[INFO]${NO_COLOR}: File machine_info.txt was created successfully...";
+	exit 0;
 fi
  
 #Clear the current screen
@@ -51,33 +53,51 @@ echo -e '   d8888888888 Y88b  d88P Y88b  d88P  888   Y88b  d88P    888';
 echo -e '  d88P     888  "Y8888P"   "Y8888P" 8888888  "Y8888P"     888';
 echo -e '\n';
  
-#Show the information of the current device                                            
-echo -e "=======================================";
-echo -e "	    Device Information          ";
-echo -e "=======================================";
-echo  "Manufacturer: $manufacturer";
-echo  "Model: $model_name";
-echo  "Script Version: $script_version";
 
-
-if [ -d "$model_name" ]; then
-	echo -e "\n\n${GREEN}Congratulations!${NO_COLOR} Your device is compatible with Assist's customized Debian development environment.\n";
-	echo -e "\nWould you like to install the customizations? [Y/N]\n";
-
-	while read option; do
-
-		if [ "$option" == "Y" ] | [ "$option" == "y" ]; then
-			//TODO Run
-			exit 0;
-		elif [ "$option" == "N" ] | [ "$option" == "n" ];then
-			echo -e "\nSee you soon!\n";
-			exit 0;
-		fi
+for dir in `pwd`/*/
+do
+	dir=${dir%*/}
+	path=${dir##*/}
+	
+	cd "$path";	
+	source check_device.sh
 		
-		echo -e "\n${RED}Error:${NO_COLOR} Please answer Yes [Y] or Not [N].\n";
+	if [ "$device_match" == "true" ]; then
+	
+		#Show the information of the current device
+		echo -e "=======================================";
+		echo -e "	    Device Information          ";
+		echo -e "=======================================";
+		echo  "Manufacturer: $manufacturer";
+		echo  "Model: $model_name";
+		echo  "Script Version: $script_version";
+	
+		echo -e "\n\n${GREEN}[OK]:${NO_COLOR} Congratulations! Your device is compatible with Assist's customized Debian development environment.";
+		echo -ne "${BLUE}[INFO]:${NO_COLOR} Would you like to continue with the installation? [Y/N]";
 
-	done
+		while read option; do
+
+			if [ "$option" == "Y" ] || [ "$option" == "y" ]; then
+				echo -e "${BLUE}[INFO]:${NO_COLOR} Please, type your ROOT password:";
+				su root -c "bash run.sh";
+				exit 0;
+			elif [ "$option" == "N" ] || [ "$option" == "n" ];then
+				echo -e "${BLUE}[INFO]:${NO_COLOR} See you soon!";
+				exit 0;
+			fi
 		
-else
-	echo -e "\n\n${RED}Error!${NO_COLOR} Your device is NOT compatible with Assist's customized Debian development environtment. Please, contact Albert Lloveras (albert@assist.ai) and request an implementation for your current device.\n";
-fi
+			echo -ne "${RED}[Error]:${NO_COLOR} Please answer Yes [Y] or Not [N]";
+
+		done
+		
+		exit 0;
+		
+	fi
+	cd ../;
+
+done
+
+echo -e "\n\n${RED}[Error]:${NO_COLOR} Your device is NOT compatible with Assist's customized Debian development environtment. Please, contact Albert Lloveras (albert@assist.ai) and request an implementation for your current device.\n";
+
+exit 1;
+

@@ -9,3 +9,13 @@
 
 #!/bin/bash
 
+#Install machine drivers
+cd Drivers;
+su root -c "bash install_drivers.sh"
+cd ../;
+
+#Configure Wireless Connection
+cd "../CommonScripts";
+su root -c "bash check_connectivity.sh";
+cd "../ThinkPad X1 Carbon";
+
