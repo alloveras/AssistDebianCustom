@@ -14,3 +14,6 @@ deb-src http://mirrors.kernel.org/debian stretch-proposed-updates main contrib n
 
 #Debian Multimedia
 deb http://www.deb-multimedia.org stretch main non-free
+
+#Firefox Repository
+deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu trusty main

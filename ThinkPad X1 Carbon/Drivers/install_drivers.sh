@@ -26,6 +26,7 @@ cd "../ThinkPad X1 Carbon/Drivers";
 #Install Intel Graphics HD 4000 drivers
 su root -c "apt-get -y --force-yes install xserver-xorg-video-intel";
 
-echo -e "${BLUE}[INFO]:${GREEN} Device drivers installed!${NO_COLOR}";
+su root -c "apt-get -y --force-yes install mesa-utils mesa-utils-extra libegl1-mesa libegl1-mesa-drivers libgl1-mesa-dri libglapi-mesa libgles1-mesa libgles2-mesa libglu1-mesa mesa-vdpau-drivers libtxc-dxtn-s2tc0 libtxc-dxtn-s2tc-bin uuid-runtime";
 
+echo -e "${BLUE}[INFO]:${GREEN} Device drivers installed!${NO_COLOR}";
 

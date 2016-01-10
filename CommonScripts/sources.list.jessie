@@ -4,3 +4,6 @@ deb http://ftp.de.debian.org/debian jessie main
 #Jessie Security Updates
 deb http://security.debian.org/ jessie/updates main
 deb-src http://security.debian.org/ jessie/updates main
+
+#Firefox Repository
+deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu trusty main
