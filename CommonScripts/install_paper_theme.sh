@@ -11,12 +11,12 @@ git clone https://github.com/daniruiz/Super-Flat-Remix-GNOME-theme.git /tmp/Supe
 echo -ne "${BLUE}[INFO]:${NO_COLOR} Installing Paper Theme...\n";
 
 #Copy SuperFlat theme
-su root -c "cp -R /tmp/SuperFlat/Super-Flat-Remix-GNOME-theme /usr/share/SuperFlat";
+su root -c "cp -R /tmp/SuperFlat/Super\ Flat\ Remix\ GNOME\ theme /usr/share/themes/SuperFlat";
 
 current_path=`pwd`;
 
 cd /tmp/PaperTheme;
-su root -c "bash install.sh < Y" 2> /dev/null;
+su root -c "yes | bash install.sh" /dev/null 2>&1;
 cd $current_path;
 
 echo -ne "${BLUE}[INFO]:${GREEN} Paper theme installed!${NO_COLOR}\n";
@@ -24,6 +24,6 @@ echo -ne "${BLUE}[INFO]:${GREEN} Paper theme installed!${NO_COLOR}\n";
 echo -ne "${BLUE}[INFO]:${NO_COLOR} Setting Paper Theme as default theme for user $current_user...${NO_COLOR}\n";
 su $current_user -c "gsettings set org.gnome.desktop.interface gtk-theme 'Paper'";
 su $current_user -c "gconftool-2 --set --type string /apps/metacity/general/theme 'Paper'";
-su $current_user -c "gsettings set org.gnome.shell.extensions.user-theme name 'PaperSuperFlat'";
+su $current_user -c "gsettings set org.gnome.shell.extensions.user-theme name 'SuperFlat'";
 
 echo -ne "${BLUE}[INFO]:${GREEN} Paper Theme installed!${NO_COLOR}\n";
