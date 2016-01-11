@@ -2,9 +2,9 @@
 # File: run.sh
 # Author: Albert Lloveras Carbonell (albert@assist.ai)
 # Date: 08/01/2015
-# Description: Entry point script for the Assist's customized
-# Debian development environtment.
-# License: Copyright Assist AI
+# Description: Entry point script to setup a custom Debian
+# development environtment.
+# License: MIT
 ################################################################
 
 #!/bin/bash
