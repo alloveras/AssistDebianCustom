@@ -1,3 +1,12 @@
+################################################################
+# File: install_drivers.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Drivers installation script for Lenovo X1 Carbon.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 echo -e "${BLUE}[INFO]:${NO_COLOR} Installing device drivers...";

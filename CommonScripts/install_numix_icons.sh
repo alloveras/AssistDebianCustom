@@ -1,3 +1,13 @@
+################################################################
+# File: install_numix_icons.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that installs the Numix Icons Theme combination
+# to provide a more user-friendly icons across the Gnome3 user interface.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 echo -ne "${BLUE}[INFO]:${NO_COLOR} Downloading Numix Circle Icons Theme...\n"

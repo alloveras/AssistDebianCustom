@@ -1,6 +1,7 @@
 ################################################################
 # File: run.sh
-# Author: Albert Lloveras Carbonell (albert@assist.ai)
+# Authors: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com)
 # Date: 08/01/2015
 # Description: Entry point script to setup a custom Debian
 # development environtment.
@@ -44,18 +45,17 @@ fi
 #Clear the current screen
 clear;
 
-#Show some assist marketing
-echo -e '\n\n';
-echo -e '         d8888  .d8888b.   .d8888b. 8888888  .d8888b. 88888888888'; 
-echo -e '        d88888 d88P  Y88b d88P  Y88b  888   d88P  Y88b    888';     
-echo -e '       d88P888 Y88b.      Y88b.       888   Y88b.         888';     
-echo -e '      d88P 888  "Y888b.    "Y888b.    888    "Y888b.      888';     
-echo -e '     d88P  888     "Y88b.     "Y88b.  888       "Y88b.    888';     
-echo -e '    d88P   888       "888       "888  888         "888    888';     
-echo -e '   d8888888888 Y88b  d88P Y88b  d88P  888   Y88b  d88P    888';     
-echo -e '  d88P     888  "Y8888P"   "Y8888P" 8888888  "Y8888P"     888';
-echo -e '\n';
- 
+#Print some marketing
+echo -e "\n\n";
+echo -e "########  ######## ########  ####    ###    ##    ##          ######  ##     ##  ######  ########  #######  ##     ##";
+echo -e "##     ## ##       ##     ##  ##    ## ##   ###   ##         ##    ## ##     ## ##    ##    ##    ##     ## ###   ###";
+echo -e "##     ## ##       ##     ##  ##   ##   ##  ####  ##         ##       ##     ## ##          ##    ##     ## #### ####";
+echo -e "##     ## ######   ########   ##  ##     ## ## ## ## ####### ##       ##     ##  ######     ##    ##     ## ## ### ##";
+echo -e "##     ## ##       ##     ##  ##  ######### ##  ####         ##       ##     ##       ##    ##    ##     ## ##     ##";
+echo -e "##     ## ##       ##     ##  ##  ##     ## ##   ###         ##    ## ##     ## ##    ##    ##    ##     ## ##     ##";
+echo -e "########  ######## ########  #### ##     ## ##    ##          ######   #######   ######     ##     #######  ##     ##";
+echo -e "\n\n";
+
 
 for dir in `pwd`/*/
 do
@@ -75,8 +75,8 @@ do
 		echo  "Model: $model_name";
 		echo  "Script Version: $script_version";
 	
-		echo -e "\n\n${GREEN}[OK]:${NO_COLOR} Congratulations! Your device is compatible with Assist's customized Debian development environment.";
-		echo -ne "${BLUE}[INFO]:${NO_COLOR} Would you like to continue with the installation? [Y/N]";
+		echo -e "\n\n${GREEN}[OK]:${NO_COLOR} Congratulations! Your device is compatible with debian-custom development environment.";
+    echo -ne "${BLUE}[INFO]:${NO_COLOR} The current user is ${GREEN}$current_user${NO_COLOR}. Would you like to continue with the installation? [Y/N]";
 
 		while read option; do
 
@@ -100,7 +100,8 @@ do
 
 done
 
-echo -e "\n\n${RED}[Error]:${NO_COLOR} Your device is NOT compatible with Assist's customized Debian development environtment. Please, contact Albert Lloveras (albert@assist.ai) and request an implementation for your current device.\n";
+echo -e "\n\n${RED}[Error]:${NO_COLOR} Your device is ${RED}NOT${NO_COLOR} compatible with debian-custom development environment.\n";
+echo -e "Please, us on Github (http://github.com/alloveras/debian-custom) and request an implementation for your current device.\n";
 
 exit 1;
 

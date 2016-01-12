@@ -1,3 +1,13 @@
+################################################################
+# File: check_device.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Lenovo Script that checks if the system hardware
+# matches the MacBook Air hardware specification.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 echo -e "${BLUE}[INFO]:${NO_COLOR} Installing device drivers...";

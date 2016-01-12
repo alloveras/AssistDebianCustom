@@ -1,3 +1,13 @@
+################################################################
+# File: install_paper_theme.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that installs and sets Paper Theme as
+# default Gnome3 theme providing a Material-Design based UI.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 #Download and Install the Paper Theme

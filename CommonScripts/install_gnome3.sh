@@ -1,3 +1,13 @@
+################################################################
+# File: install_gnome3.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that installs Gnome3 desktop environtment
+# and removes all the unnecessary stuff it comes with.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 echo -ne "${BLUE}[INFO]:${NO_COLOR} Preparing system for installing Gnome3 desktop environtment...\n";
@@ -14,7 +24,7 @@ su root -c "apt-get -y --force-yes upgrade";
 echo -ne "${BLUE}[INFO]:${NO_COLOR} Installing Gnome3 desktop environtment...\n";
 
 #Start Gnome Installation
-su root -c "apt-get -y --force-yes install gnome network-manager-gnome";
+su root -c "apt-get -y --force-yes install gnome";
 
 #Do some clean up of gnome programs
 su root -c "apt-get -y --force-yes remove gnome-chess cheese aisleriot five-or-more four-in-a-row gnome-documents gnome-mahjongg gnome-music gnome-mines gnome-nibbles gnome-photos gnome-robots gnome-sudoku gnome-tetravex lightsoff polari quadrapassel xboard empathy bijiben swell-foop tali hitori iagno gnome-klotski totem totem-common gnome-dictionary xterm gnome-orca gnome-getting-started-docs gnome-user-guide synaptic seahorse tracker";

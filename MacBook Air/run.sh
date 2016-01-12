@@ -1,9 +1,9 @@
 ################################################################
 # File: run.sh
-# Authors: Albert Lloveras Carbonell (albert@assist.ai), Roger
+# Authors: Albert Lloveras Carbonell (albertlloveras@gmail.com), Roger
 # Fernandez Guri (rfguri@gmail.com)
 # Date: 09/01/2015
-# Description: MacBook Air entry point for customization.
+# Description: MacBook Air entry point for debian customization.
 # License: MIT
 ################################################################
 

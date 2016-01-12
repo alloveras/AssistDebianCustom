@@ -1,3 +1,15 @@
+################################################################
+# File: check_connectivity.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that checks whether the computer is connected
+# to the internet or not. If not, it suggests to the user the
+# alternative of configure any of available network interfaces and
+# retry the connectivity check.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 #Iterate until the network connectivity is available

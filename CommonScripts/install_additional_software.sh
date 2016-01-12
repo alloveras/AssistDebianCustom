@@ -1,3 +1,14 @@
+################################################################
+# File: install_additional_software.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that install additional software that is
+# commonly used by people such as audio & video codecs, flash
+# player, file compression formats...
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 #Install some audio and video codecs

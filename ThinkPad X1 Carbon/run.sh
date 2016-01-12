@@ -1,10 +1,11 @@
 ################################################################
-# File: config.sh
-# Author: Albert Lloveras Carbonell (albert@assist.ai)
+# File: run.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
 # Date: 08/01/2015
-# Description: Lenovo ThinkPad X1 Carbon entry point for Assist's
+# Description: Lenovo ThinkPad X1 Carbon entry point for
 # Debian customization.
-# License: Copyright Assist AI
+# License: MIT
 ################################################################
 
 #!/bin/bash

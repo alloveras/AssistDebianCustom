@@ -1,3 +1,15 @@
+################################################################
+# File: install_zsh.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that installs Oh My Zsh terminal and makes
+# it the default terminal for the current user. Furthermore, it
+# also installs the Powerline patched fonts that are required to
+# use the agnoster theme on zsh.
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 #Install the needed OS packages

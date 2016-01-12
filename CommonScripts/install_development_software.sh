@@ -1,3 +1,13 @@
+################################################################
+# File: install_development_software.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that installs basic development libraries,
+# packages and compilers such as gcc, git, glibc...
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 echo -ne "${BLUE}[INFO]:${NO_COLOR} Installing basic software packages for developers...";

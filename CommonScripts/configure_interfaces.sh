@@ -1,3 +1,13 @@
+################################################################
+# File: configure_interfaces.sh
+# Author: Albert Lloveras Carbonell (albertlloveras@gmail.com),
+# Roger Fernandez Guri (rfguri@gmail.com).
+# Date: 08/01/2015
+# Description: Script that list available network interfaces and
+# allow configuring it in command-line mode (even wireless networks).
+# License: MIT
+################################################################
+
 #!/bin/bash
 
 function configure_wireless(){
