@@ -1,10 +1,10 @@
 ################################################################
 # File: run.sh
-# Author: Albert Lloveras Carbonell (albert@assist.ai)
+# Authors: Albert Lloveras Carbonell (albert@assist.ai), Roger
+# Fernandez Guri (rfguri@gmail.com)
 # Date: 09/01/2015
-# Description: MacBook Air entry point for Assist's Debian
-# customization.
-# License: Copyright Assist AI
+# Description: MacBook Air entry point for customization.
+# License: MIT
 ################################################################
 
 #!/bin/bash
@@ -31,7 +31,7 @@ su root -c "bash install_vim.sh";
 
 #Install TLP and do some power optimizations
 su root -c 'echo "deb http://repo.linrunner.de/debian stretch main" >> /etc/apt/sources.list';
-su root -c "apt-key adv --keyserver pool.sks-keyservers.net --recv-keys CD4E"
+su root -c "apt-key adv --keyserver pool.sks-keyservers.net --recv-keys CD4E8809"
 su root -c "apt-get update";
 su root -c "apt-get -y --force-yes install tlp tlp-rdw";
 su root -c "bash allow_gnome_manage_interfaces.sh";
